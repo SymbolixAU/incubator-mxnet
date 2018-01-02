@@ -58,8 +58,10 @@ cd R-package
 sudo Rscript -e "library(devtools); library(methods); options(repos=c(CRAN='https://cran.rstudio.com')); install_deps(dependencies = TRUE)"
 cd ..
 
-echo "Compiling and installing R package. This can take few minutes..."
+echo "Compiling R package. This can take few minutes..."
 sudo make rpkg
 
+echo "Installing R package..."
+sudo R CMD INSTALL mxnet_current_r.tar.gz
 
 echo "Done! MXNet for R installation is complete. Go ahead and explore MXNet with R :-)"
